@@ -67,7 +67,16 @@
      ```sh
       kops validate cluster
     ```
-
+    
+1. To connect from the k8s-mgmt server to master node using the ssh-keygen which was generated earlier in the above step.
+      ```sh
+      ssh -i ~/.ssh/id_rsa admin@api.demo.k8s.kishanth.in
+      ```
+1. To connect from the k8s-mgmt server to worker node using the ssh-keygen which was generated earlier in the above step.
+      ```sh
+      ssh -i ~/.ssh/id_rsa admin@public_ip_address of worker-node
+      ```
+      
 1. To list nodes
    ```sh
    kubectl get nodes
