@@ -57,11 +57,16 @@
    ```sh
    kops create cluster --cloud=aws --zones=ap-south-1b --name=demo.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
     ```
-
+    
 1. Create kubernetes cluser
     ```sh
     kops update cluster demo.k8s.valaxy.net --yes
     ```
+
+1. Command for applying the cluster changes to the cloud. Changes may require instances to restart: 
+```sh
+kops rolling-update cluster --cloudonly --yes
+```
 
 1. Validate your cluster
      ```sh
